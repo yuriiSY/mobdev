@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
   API_KEY: '',
-  API_URL: 'https://api.openweathermap.org/data/2.5'
+  API_URL: 'ttps://newsapi.org/v2'
 };

@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  API_KEY: '',
-  API_URL: 'https://api.openweathermap.org/data/2.5'
+  API_KEY: '57abf33f5cf84d71a156b0c96d5f833f',
+  API_URL: 'https://newsapi.org/v2'
 };
 
 /*
