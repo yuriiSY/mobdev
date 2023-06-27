@@ -8,12 +8,24 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'main',
     pathMatch: 'full'
   },
   {
     path: 'details',
     loadChildren: () => import('./details/details.module').then( m => m.DetailsPageModule)
+  },
+  {
+    path: 'main',
+    loadChildren: () => import('./main/main.module').then( m => m.MainPageModule)
+  },
+  {
+    path: 'ua-news',
+    loadChildren: () => import('./ua-news/ua-news.module').then( m => m.UaNewsPageModule)
+  },
+  {
+    path: 'ie-news',
+    loadChildren: () => import('./ie-news/ie-news.module').then( m => m.IeNewsPageModule)
   },
 ];
 

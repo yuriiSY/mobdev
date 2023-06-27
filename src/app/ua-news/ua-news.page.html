@@ -2,19 +2,25 @@
   <ion-toolbar>
     <ion-button (click)="goBack()" fill="outligne" color="secondary">Back</ion-button>
     <ion-title slot="end">
-      US News
+      UA News
     </ion-title>
   </ion-toolbar>
 </ion-header>
+
 <ion-content [fullscreen]="true">
+
   <ion-list>
     <ion-item *ngFor="let item of articles">
       <ion-grid>
         <ion-row>
-          <ion-col (click)="getDetails(item)"><h2>{{item.title}}</h2></ion-col>
+          <ion-col (click)="getDetails(item)">
+            <h2>{{item.title}}</h2>
+          </ion-col>
         </ion-row>
         <ion-row>
-          <ion-col (click)="getDetails(item)"><p>{{item.description}}</p></ion-col>
+          <ion-col (click)="getDetails(item)">
+            <p>{{item.description}}</p>
+          </ion-col>
         </ion-row>
         <ion-row>
           <ion-col>
@@ -26,5 +32,5 @@
     </ion-item>
   </ion-list>
   <br>
-  
+
 </ion-content>

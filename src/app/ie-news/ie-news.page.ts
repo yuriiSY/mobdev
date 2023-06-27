@@ -1,5 +1,5 @@
 import { environment } from 'src/environments/environment';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http"
 import { NavigationExtras, Router } from '@angular/router';
 
@@ -7,22 +7,27 @@ const API_KEY = environment.API_KEY;
 const API_URL = environment.API_URL
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-ie-news',
+  templateUrl: './ie-news.page.html',
+  styleUrls: ['./ie-news.page.scss'],
 })
-export class HomePage {
+    
+export class IeNewsPage implements OnInit {
 
-  weatherValues: any;
   articles: any = [];
 
-  constructor(public httpClient: HttpClient,private router:Router) {
+   constructor(public httpClient: HttpClient,private router:Router) {
     this.loadData();
   }
 
 
+
+  ngOnInit() {
+  }
+
+
   loadData() { 
-    this.httpClient.get(`${API_URL}/top-headlines?country=us&apiKey=${API_KEY}`).subscribe((result:any) => {
+    this.httpClient.get(`${API_URL}/top-headlines?country=IE&apiKey=${API_KEY}`).subscribe((result:any) => {
       console.log(result);
       this.articles = result.articles;
      });
@@ -49,4 +54,3 @@ export class HomePage {
     this.router.navigate(['/main'])
   }
 }
-
