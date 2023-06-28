@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Browser } from '@capacitor/browser';
 
 @Component({
   selector: 'app-details',
@@ -33,8 +34,8 @@ export class DetailsPage implements OnInit {
     this.router.navigate(['/home'])
   }
 
-  openBrowser() { 
-    
+  async openBrowser() { 
+    await Browser.open({ url: this.url});
   }
 }
 
