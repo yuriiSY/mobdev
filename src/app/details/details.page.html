@@ -1,6 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>News By - {{source}}</ion-title>
+    <ion-button (click)="goBack()" fill="outligne" color="secondary">Back</ion-button>
+    <ion-title slot="end">News By - {{source}}</ion-title>
   </ion-toolbar>
 </ion-header>
 

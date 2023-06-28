@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Browser } from '@capacitor/browser';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-details',
@@ -17,7 +18,7 @@ export class DetailsPage implements OnInit {
   source: any
   title: any
 
-  constructor(private router:Router, private activatedRoute:ActivatedRoute) { }
+  constructor(private router:Router, private activatedRoute:ActivatedRoute,private navCtrl: NavController) { }
 
   ngOnInit() {
     this.author = this.activatedRoute.snapshot.queryParamMap.get('author')
@@ -31,7 +32,7 @@ export class DetailsPage implements OnInit {
   }
 
   goBack() { 
-    this.router.navigate(['/home'])
+    this.navCtrl.pop();
   }
 
   async openBrowser() { 
