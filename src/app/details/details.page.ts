@@ -32,6 +32,10 @@ export class DetailsPage implements OnInit {
   goBack() { 
     this.router.navigate(['/home'])
   }
+
+  openBrowser() { 
+    
+  }
 }
 
 
